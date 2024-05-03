@@ -1,8 +1,8 @@
-# Fractals
+# Fractal Set Generator
 
 ### Overview
 
-This assignment is meant to create images using Fractal equations.
+This assignment is meant to create images using complex equations.
 
 ## Usage
 
