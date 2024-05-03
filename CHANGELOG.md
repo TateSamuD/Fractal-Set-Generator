@@ -9,8 +9,13 @@ Versioning is marked when there is a notable change
 ## Versions
 
 - [0.0.1](#ver-001)
-- [0.0.2]
-- [0.0.5]
+- [0.0.2](#ver-002)
+- [0.0.5](#ver-005)
+- [0.1.0](#ver-010)
+- [0.2.0](#ver-020)
+- [0.2.5](#ver-025)
+- [0.5.0](#ver-050)
+- [1.0.0](#ver-100)
 
 ## Versions and Details
 
