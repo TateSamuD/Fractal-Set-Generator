@@ -6,7 +6,7 @@
 - add Fractal Flames
 - implement zoom video
 
-## Ver 1.2.0 
+## Ver 1.2.0
 
 - Implement threading for faster processing of equations
 - Implement file clean up after frame generation
