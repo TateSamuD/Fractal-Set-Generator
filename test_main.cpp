@@ -2,21 +2,24 @@
 #include <cassert>
 
 // Function to redirect cin and capture user input
-void redirectCin(const std::string& input) {
+void redirectCin(const std::string &input)
+{
     std::istringstream iss(input);
     std::cin.rdbuf(iss.rdbuf());
 }
 
 // Function to capture cout output
-std::string captureCout() {
+std::string captureCout()
+{
     std::stringstream ss;
-    std::streambuf* oldCout = std::cout.rdbuf(ss.rdbuf());
+    std::streambuf *oldCout = std::cout.rdbuf(ss.rdbuf());
     std::cout.rdbuf(oldCout);
     return ss.str();
 }
 
 // Test for julia_choice function
-void testJuliaChoice() {
+void testJuliaChoice()
+{
     std::string input = "1\n0\n";
     redirectCin(input);
 
@@ -44,7 +47,8 @@ void testJuliaChoice() {
 }
 
 // Test for noise_choice function
-void testNoiseChoice() {
+void testNoiseChoice()
+{
     std::string input = "2\n0\n";
     redirectCin(input);
 
@@ -65,7 +69,8 @@ void testNoiseChoice() {
 }
 
 // Test for gaussian_choice function
-void testGaussianChoice() {
+void testGaussianChoice()
+{
     std::string input = "1\n0\n";
     redirectCin(input);
 
@@ -86,7 +91,8 @@ void testGaussianChoice() {
 }
 
 // Test for main function
-void testMain() {
+void testMain()
+{
     std::string input = "2\n1\n0\n";
     redirectCin(input);
 
@@ -124,7 +130,8 @@ void testMain() {
     assert(actualOutput == expectedOutput);
 }
 
-int main() {
+int main()
+{
     testJuliaChoice();
     testNoiseChoice();
     testGaussianChoice();

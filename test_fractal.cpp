@@ -3,7 +3,8 @@
 #include <cassert>
 
 // Test for mandelbrot function
-void testMandelbrot() {
+void testMandelbrot()
+{
     double x = 0.5;
     double y = 0.5;
     int max_iter = 100;
@@ -16,7 +17,8 @@ void testMandelbrot() {
 }
 
 // Test for julia_z2 function
-void testJuliaZ2() {
+void testJuliaZ2()
+{
     double x = 0.5;
     double y = 0.5;
     int max_iter = 100;
@@ -29,7 +31,8 @@ void testJuliaZ2() {
 }
 
 // Test for julia_z2_offset function
-void testJuliaZ2Offset() {
+void testJuliaZ2Offset()
+{
     double x = 0.5;
     double y = 0.5;
     int max_iter = 100;
@@ -43,7 +46,8 @@ void testJuliaZ2Offset() {
 }
 
 // Test for julia_z4 function
-void testJuliaZ4() {
+void testJuliaZ4()
+{
     double x = 0.5;
     double y = 0.5;
     int max_iter = 100;
@@ -56,7 +60,8 @@ void testJuliaZ4() {
 }
 
 // Test for julia_z4_offset function
-void testJuliaZ4Offset() {
+void testJuliaZ4Offset()
+{
     double x = 0.5;
     double y = 0.5;
     int max_iter = 100;
@@ -70,7 +75,8 @@ void testJuliaZ4Offset() {
 }
 
 // Test for julia_z8 function
-void testJuliaZ8() {
+void testJuliaZ8()
+{
     double x = 0.5;
     double y = 0.5;
     int max_iter = 100;
@@ -83,7 +89,8 @@ void testJuliaZ8() {
 }
 
 // Test for lorenz function
-void testLorenz() {
+void testLorenz()
+{
     double x = 0.5;
     double y = 0.5;
     int max_iter = 100;
@@ -96,7 +103,8 @@ void testLorenz() {
 }
 
 // Test for aizawa function
-void testAizawa() {
+void testAizawa()
+{
     double x = 0.5;
     double y = 0.5;
     int max_iter = 100;
@@ -109,7 +117,8 @@ void testAizawa() {
 }
 
 // Test for noise function
-void testNoise() {
+void testNoise()
+{
     double x = 0.5;
     double y = 0.5;
     int max_iter = 100;
@@ -122,7 +131,8 @@ void testNoise() {
 }
 
 // Test for gaussian function
-void testGaussian() {
+void testGaussian()
+{
     double x = 0.5;
     double y = 0.5;
     int max_iter = 100;
@@ -135,7 +145,8 @@ void testGaussian() {
 }
 
 // Test for turbulence function
-void testTurbulence() {
+void testTurbulence()
+{
     double x = 0.5;
     double y = 0.5;
     int max_iter = 100;
@@ -148,7 +159,8 @@ void testTurbulence() {
 }
 
 // Test for fractal_noise function
-void testFractalNoise() {
+void testFractalNoise()
+{
     double x = 0.5;
     double y = 0.5;
     int max_iter = 100;
@@ -161,7 +173,8 @@ void testFractalNoise() {
 }
 
 // Test for fractal_gaussian function
-void testFractalGaussian() {
+void testFractalGaussian()
+{
     double x = 0.5;
     double y = 0.5;
     int max_iter = 100;
@@ -174,7 +187,8 @@ void testFractalGaussian() {
 }
 
 // Test for fractal_flame function
-void testFractalFlame() {
+void testFractalFlame()
+{
     double x = 0.5;
     double y = 0.5;
     int max_iter = 100;
@@ -186,7 +200,8 @@ void testFractalFlame() {
     assert(actualOutput == expectedOutput);
 }
 
-int main() {
+int main()
+{
     testMandelbrot();
     testJuliaZ2();
     testJuliaZ2Offset();

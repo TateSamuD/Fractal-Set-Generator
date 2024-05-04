@@ -10,25 +10,28 @@ void mk_dir(const char *dir)
    std::stringstream cmd;
    cmd << "mkdir " << dir;
    int ret = system(cmd.str().c_str());
-   if (ret == 0){
+   if (ret == 0)
+   {
       std::cout << "Directory " << dir << " created\n";
    }
 }
 
-void clean_frame(const char *dir){
+void clean_frame(const char *dir)
+{
    std::stringstream cmd;
    cmd << "rm -rf " << dir;
    int ret = system(cmd.str().c_str());
-   if (ret == 0){
-      std::cout << "Generated Frames removed" <<std::endl;
+   if (ret == 0)
+   {
+      std::cout << "Generated Frames removed" << std::endl;
    }
 }
 
 bool frame_warning()
 {
    char choice;
-   std::cout << "This will generate " << NUM_FRAMES << " frames of " << F_SIZE << "mb each\n";
-   std::cout << "This will take a while and take up " << F_SIZE * NUM_FRAMES << "mb of space\n";
+   std::cout << "This will generate " << NUM_FRAMES << " frames of " << F_SIZE << "mb each" << std::endl;
+   std::cout << "This will take a while and take up " << F_SIZE * NUM_FRAMES << "mb of space" << std::endl;
    std::cout << "Do you want to continue? [y/n]: ";
    std::cin >> choice;
    if (choice == 'y')
@@ -84,13 +87,19 @@ void julia_choice()
       //    generate_julia_z4_offset_frames();
       //    break;
       case 6:
-         if (!frame_warning()){break;}
+         if (!frame_warning())
+         {
+            break;
+         }
          generate_julia_z2_offset_frames();
          generate_julia_z2_video();
          clean_frame("./Julia_z2_Frames");
          break;
       case 7:
-         if (!frame_warning()){break;}
+         if (!frame_warning())
+         {
+            break;
+         }
          generate_julia_z4_offset_frames();
          generate_julia_z4_video();
          clean_frame("./Julia_z4_Frames");
@@ -127,7 +136,10 @@ void turbulence_choice()
          generate_turbulence_image();
          break;
       case 2:
-         if (!frame_warning()){break;}
+         if (!frame_warning())
+         {
+            break;
+         }
          generate_turbulence_frame();
          generate_turbulence_video();
          clean_frame("./Turbulence_Frames");

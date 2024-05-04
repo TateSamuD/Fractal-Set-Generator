@@ -243,17 +243,18 @@ int fractal_gaussian(double x, double y, int max_iter)
    return i;
 }
 
-int fractal_flame(double x, double y, int max_iter) {
-    double a = x;
-    double b = y;
-    int i = 0;
-    while (i < max_iter && a * a + b * b < 4.0) {
-        double a_new = a * a - b * b;
-        double b_new = 2 * a * b;
-        a = a_new - 0.54; // Adjust this constant as needed
-        b = b_new + 0.54; // Adjust this constant as needed
-        i++;
-    }
-    return i;
+int fractal_flame(double x, double y, int max_iter)
+{
+   double a = x;
+   double b = y;
+   int i = 0;
+   while (i < max_iter && a * a + b * b < 4.0)
+   {
+      double a_new = a * a - b * b;
+      double b_new = 2 * a * b;
+      a = a_new - 0.54; // Adjust this constant as needed
+      b = b_new + 0.54; // Adjust this constant as needed
+      i++;
+   }
+   return i;
 }
-

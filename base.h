@@ -21,7 +21,6 @@
 // #include <png++/png.hpp>
 // #include <png.h>
 
-
 /* Image sizes*/
 /* Generates 10.5mb images*/
 #define WIDTH 1920
@@ -56,10 +55,9 @@ extern int frame_number;
 
 typedef struct RGB
 {
-	 uint8_t r, g, b;
-	 float h, s, v;
-	 RGB(uint8_t red, uint8_t green, uint8_t blue) : r(red), g(green), b(blue) {	 }
+	uint8_t r, g, b;
+	float h, s, v;
+	RGB(uint8_t red, uint8_t green, uint8_t blue) : r(red), g(green), b(blue) {}
 } RGB_t;
-
 
 #endif // !BASE_H
