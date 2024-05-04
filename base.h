@@ -40,7 +40,7 @@
 
 #define NUM_FRAMES 1480
 // #define NUM_FRAMES 720
-#define FPS 30
+#define FPS 20
 
 #define M_PI 3.14159265358979323846
 

@@ -87,3 +87,14 @@ Versioning is marked when there is a notable change
 
 - Code works now for Julia set (z^2 and z^4), Mandelbrot
 - video generation is complete for Julia sets
+
+### Ver 1.3.0
+
+#### Major change
+
+-
+
+#### Minor change
+
+- FPS lowered
+- Frames generated lowered
