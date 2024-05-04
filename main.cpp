@@ -15,6 +15,15 @@ void mk_dir(const char *dir)
    }
 }
 
+void clean_frame(const char *dir){
+   std::stringstream cmd;
+   cmd << "rm -rf " << dir;
+   int ret = system(cmd.str().c_str());
+   if (ret == 0){
+      std::cout << "Generated Frames removed" <<std::endl;
+   }
+}
+
 bool frame_warning()
 {
    char choice;
@@ -45,9 +54,9 @@ void julia_choice()
       std::cout << "[2] Julia Set z^4\n";
       std::cout << "[3] Julia Set z^8\n";
       std::cout << "-----------------------------\n";
-      std::cout << "[4] Julia Set z^2 Frames\n";
-      std::cout << "[5] Julia Set z^4 Frames\n";
-      std::cout << "-----------------------------\n";
+      // std::cout << "[4] Julia Set z^2 Frames\n";
+      // std::cout << "[5] Julia Set z^4 Frames\n";
+      // std::cout << "-----------------------------\n";
       std::cout << "[6] Julia Set z^2 Video\n";
       std::cout << "[7] Julia Set z^4 Video\n";
       std::cout << "-----------------------------\n";
@@ -66,19 +75,25 @@ void julia_choice()
       case 3:
          generate_julia_z8_image();
          break;
-      case 4:
+      // case 4:
+      //    if (!frame_warning()){break;}
+      //    generate_julia_z2_offset_frames();
+      //    break;
+      // case 5:
+      //    if (!frame_warning()){break;}
+      //    generate_julia_z4_offset_frames();
+      //    break;
+      case 6:
          if (!frame_warning()){break;}
          generate_julia_z2_offset_frames();
-         break;
-      case 5:
-         if (!frame_warning()){break;}
-         generate_julia_z4_offset_frames();
-         break;
-      case 6:
          generate_julia_z2_video();
+         clean_frame("./Julia_z2_Frames");
          break;
       case 7:
+         if (!frame_warning()){break;}
+         generate_julia_z4_offset_frames();
          generate_julia_z4_video();
+         clean_frame("./Julia_z4_Frames");
          break;
       case 0:
          std::cout << "Exiting\n";
@@ -115,6 +130,7 @@ void turbulence_choice()
          if (!frame_warning()){break;}
          generate_turbulence_frame();
          generate_turbulence_video();
+         clean_frame("./Turbulence_Frames");
          break;
       case 0:
          std::cout << "Exiting\n";
@@ -136,7 +152,7 @@ void noise_choice()
       std::cout << "Please choose an Option\n";
       std::cout << "-----------------------------\n";
       std::cout << "[1] Noise\n";
-      std::cout << "[2] Noise Fractal\n";
+      std::cout << "[2] Noise Video\n";
       std::cout << "-----------------------------\n";
       std::cout << "[0] Exit\n\n";
       std::cout << "Enter your choice: ";

@@ -882,6 +882,7 @@ void generate_turbulence_frame(){
 
    for (int frame = 0; frame < NUM_FRAMES; frame++)
    {
+      std::cout << "Overall Progress:   " << frame << "/"<< NUM_FRAMES << std::endl;
       for (int y = HEIGHT - 1; y >= 0;  y--)
       {
          for (int x = 0; x < WIDTH; x++)

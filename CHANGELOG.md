@@ -92,7 +92,8 @@ Versioning is marked when there is a notable change
 
 #### Major change
 
--
+- Frames folder now gets deleted after video is generated
+- Julia Sets options now generate frames and videos from a single choice
 
 #### Minor change
 
