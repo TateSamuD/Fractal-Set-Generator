@@ -38,7 +38,7 @@
 // #define HEIGHT 1280
 // #define F_SIZE 4.9
 
-#define NUM_FRAMES 1600
+#define NUM_FRAMES 1480
 // #define NUM_FRAMES 720
 #define FPS 30
 
