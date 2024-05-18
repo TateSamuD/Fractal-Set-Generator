@@ -15,6 +15,7 @@
 #include <string.h>
 #include <string>
 #include <sys/stat.h>
+#include <time.h>
 #include <vector>
 #include <cassert>
 // #include <opencv2/opencv.hpp>

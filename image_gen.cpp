@@ -397,6 +397,8 @@ void generate_julia_z4_offset_frames()
    for (int frame = 0; frame < NUM_FRAMES; frame++)
    {
       std::cout << "Overall Progress:   " << frame << "/" << NUM_FRAMES << std::endl;
+      std::cout << "\033[A"; // Move cursor up one line
+      std::cout << std::flush;
       for (int y = HEIGHT - 1; y >= 0; y--)
       {
          for (int x = 0; x < WIDTH; x++)
@@ -440,12 +442,14 @@ void generate_julia_z4_offset_frames()
          if (image.fail())
          {
             std::cout << "Error writing to file: " << filename << std::endl;
+            return;
          }
          image.close();
       }
       else
       {
          std::cout << "Error opening file: " << filename << std::endl;
+         return;
       }
    }
 

@@ -27,6 +27,26 @@ void clean_frame(const char *dir)
    }
 }
 
+void time_taken(clock_t start_time, clock_t end_time)
+{
+   double total_time = double(end_time - start_time) / double(CLOCKS_PER_SEC);
+   int hours_t = total_time / 3600.0;
+   int minutes_t = ((int)total_time / 60) % 60;
+   int sec_t = (int)time_taken % 60;
+   if (hours_t < 1 && minutes_t > 0)
+   {
+      std::cout << "Time taken: " << minutes_t << "mins " << sec_t << "seconds." << std::endl;
+   }
+   else if (hours_t < 1 && minutes_t < 1)
+   {
+      std::cout << "Time taken: "<< sec_t << "seconds." << std::endl;
+   }
+   else
+   {
+      std::cout << "Time taken: " << hours_t << "hrs " << minutes_t << "mins " << sec_t << "seconds." << std::endl;
+   }
+}
+
 bool frame_warning()
 {
    char choice;
@@ -47,6 +67,7 @@ bool frame_warning()
 void julia_choice()
 {
    int choice = -1;
+   clock_t start, end;
    while (choice != 0)
    {
       std::cout << "\n\n\n-----------------------------\n";
@@ -91,18 +112,24 @@ void julia_choice()
          {
             break;
          }
+         start = clock();
          generate_julia_z2_offset_frames();
          generate_julia_z2_video();
          clean_frame("./Julia_z2_Frames");
+         end = clock();
+         time_taken(start, end);
          break;
       case 7:
          if (!frame_warning())
          {
             break;
          }
+         start = clock();
          generate_julia_z4_offset_frames();
          generate_julia_z4_video();
          clean_frame("./Julia_z4_Frames");
+         end = clock();
+         time_taken(start, end);
          break;
       case 0:
          std::cout << "Exiting\n";
@@ -117,6 +144,7 @@ void julia_choice()
 void turbulence_choice()
 {
    int choice = -1;
+   clock_t start, end;
    while (choice != 0)
    {
       std::cout << "\n\n\n-----------------------------\n";
@@ -140,9 +168,12 @@ void turbulence_choice()
          {
             break;
          }
+         start = clock();
          generate_turbulence_frame();
          generate_turbulence_video();
          clean_frame("./Turbulence_Frames");
+         end = clock();
+         time_taken(start, end);
          break;
       case 0:
          std::cout << "Exiting\n";
@@ -157,6 +188,7 @@ void turbulence_choice()
 void noise_choice()
 {
    int choice = -1;
+   clock_t start, end;
    while (choice != 0)
    {
       std::cout << "\n\n\n-----------------------------\n";
@@ -176,7 +208,10 @@ void noise_choice()
          generate_noise_image();
          break;
       case 2:
+         start = clock();
          generate_fractal_noise_image();
+         end = clock();
+         time_taken(start, end);
          break;
       case 0:
          std::cout << "Exiting\n";
@@ -191,6 +226,7 @@ void noise_choice()
 void gaussian_choice()
 {
    int choice = -1;
+   clock_t start, end;
    while (choice != 0)
    {
       std::cout << "\n\n\n-----------------------------\n";
