@@ -8,6 +8,7 @@
 #include <iomanip>
 #include <iostream>
 #include <math.h>
+#include <omp.h>
 #include <sstream>
 #include <stdlib.h>
 #include <stdint.h>
