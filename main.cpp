@@ -27,7 +27,7 @@ void clean_frame(const char *dir)
    }
 }
 
-void time_taken(clock_t start_time, clock_t end_time)
+void time_taken(struct tm *date, clock_t start_time, clock_t end_time, std::string function_name)
 {
    double total_time = double(end_time - start_time) / double(CLOCKS_PER_SEC);
    int hours_t = total_time / 3600.0;
@@ -45,6 +45,19 @@ void time_taken(clock_t start_time, clock_t end_time)
    {
       std::cout << "Time taken: " << hours_t << "hrs " << minutes_t << "mins " << sec_t << "seconds." << std::endl;
    }
+
+   std::ofstream time_log(function_name + ".log", std::ios::app);
+   if (time_log.is_open())
+   {
+      time_log << "Executed on: " << asctime(date) << " ";
+      time_log << "Time taken: " << total_time << " seconds." << std::endl;
+      time_log.close();
+   }
+   else
+   {
+      std::cout << "Unable to open time_tracking.txt" << std::endl;
+   }
+
 }
 
 bool frame_warning()
@@ -68,6 +81,7 @@ void julia_choice()
 {
    int choice = -1;
    clock_t start, end;
+   time_t date;
    while (choice != 0)
    {
       std::cout << "\n\n\n-----------------------------\n";
@@ -112,24 +126,26 @@ void julia_choice()
          {
             break;
          }
+         time(&date);
          start = clock();
          generate_julia_z2_offset_frames();
          generate_julia_z2_video();
          clean_frame("./Julia_z2_Frames");
          end = clock();
-         time_taken(start, end);
+         time_taken(localtime(&date),start, end, "Julia_z2");
          break;
       case 7:
          if (!frame_warning())
          {
             break;
          }
+         time(&date);
          start = clock();
          generate_julia_z4_offset_frames();
          generate_julia_z4_video();
          clean_frame("./Julia_z4_Frames");
          end = clock();
-         time_taken(start, end);
+         time_taken(localtime(&date),start, end, "Julia_z4");
          break;
       case 0:
          std::cout << "Exiting\n";
@@ -145,6 +161,7 @@ void turbulence_choice()
 {
    int choice = -1;
    clock_t start, end;
+   time_t date;
    while (choice != 0)
    {
       std::cout << "\n\n\n-----------------------------\n";
@@ -168,12 +185,13 @@ void turbulence_choice()
          {
             break;
          }
+         time(&date);
          start = clock();
          generate_turbulence_frame();
          generate_turbulence_video();
          clean_frame("./Turbulence_Frames");
          end = clock();
-         time_taken(start, end);
+         time_taken(localtime(&date),start, end, "Turbulence_noise");
          break;
       case 0:
          std::cout << "Exiting\n";
@@ -189,6 +207,7 @@ void noise_choice()
 {
    int choice = -1;
    clock_t start, end;
+   time_t date;
    while (choice != 0)
    {
       std::cout << "\n\n\n-----------------------------\n";
@@ -208,10 +227,11 @@ void noise_choice()
          generate_noise_image();
          break;
       case 2:
+         time(&date);
          start = clock();
          generate_fractal_noise_image();
          end = clock();
-         time_taken(start, end);
+         time_taken(localtime(&date),start, end, "Noise");
          break;
       case 0:
          std::cout << "Exiting\n";
@@ -227,6 +247,7 @@ void gaussian_choice()
 {
    int choice = -1;
    clock_t start, end;
+   time_t date;
    while (choice != 0)
    {
       std::cout << "\n\n\n-----------------------------\n";

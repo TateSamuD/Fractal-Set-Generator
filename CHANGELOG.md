@@ -100,3 +100,4 @@ Versioning is marked when there is a notable change
 - FPS lowered
 - Frames generated lowered
 - Added `time_taken()` function to main.cpp for debugging
+- Time logging created to keep track of how long frame generation takes.
