@@ -273,7 +273,6 @@ void generate_julia_z2_offset_frames()
       std::ostringstream oss;
       oss << "/julia_z2_frame_" << std::setw(6) << std::setfill('0') << frame + 1 << ".bmp";
       std::string filename = oss.str();
-      std::cout << "./Julia_z2_Frames" + filename << std::endl;
       std::ofstream image("./Julia_z2_Frames" + filename, std::ios::binary);
       if (image.is_open())
       {
