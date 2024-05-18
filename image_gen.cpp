@@ -237,12 +237,13 @@ void generate_julia_z2_offset_frames()
 
    for (int frame = 0; frame < NUM_FRAMES; frame++)
    {
+      std::cout << "\033[2A"; // Move cursor up one line
       std::cout << "Overall Progress:   " << frame << "/" << NUM_FRAMES << std::endl;
       std::cout << "\033[A"; // Move cursor up one line
       std::cout << std::flush;
-      #pragma omp parallel for
       for (int y = HEIGHT - 1; y >= 0; y--)
       {
+#pragma omp parallel for
          for (int x = 0; x < WIDTH; x++)
          {
             double x0 = (x - WIDTH / 2.0) * 4.0 / WIDTH;
@@ -398,11 +399,12 @@ void generate_julia_z4_offset_frames()
 
    for (int frame = 0; frame < NUM_FRAMES; frame++)
    {
+      std::cout << "\033[2A"; // Move cursor up one line
       std::cout << "Overall Progress:   " << frame << "/" << NUM_FRAMES << std::endl;
       std::cout << "\033[A"; // Move cursor up one line
       std::cout << std::flush;
 
-      #pragma omp parallel for
+#pragma omp parallel for
       for (int y = HEIGHT - 1; y >= 0; y--)
       {
          for (int x = 0; x < WIDTH; x++)
