@@ -32,7 +32,7 @@ void time_taken(struct tm *date, clock_t start_time, clock_t end_time, std::stri
    double total_time = double(end_time - start_time) / double(CLOCKS_PER_SEC);
    int hours_t = total_time / 3600.0;
    int minutes_t = ((int)total_time / 60) % 60;
-   int sec_t = (int)time_taken % 60;
+   int sec_t = (int)total_time % 60;
    if (hours_t < 1 && minutes_t > 0)
    {
       std::cout << "Time taken: " << minutes_t << "mins " << sec_t << "seconds." << std::endl;
