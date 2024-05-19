@@ -3,7 +3,7 @@ ECHO = echo
 VAL = valgrind
 RM = rm -f
 
-CXXFLAGS = -ggdb -std=c++17 -03 -fopenmp
+CXXFLAGS = -ggdb -std=c++17 -O3 -fopenmp
 DATE = $(shell date +"%Y%m%d_%H%M")
 VALGRIND_OPTIONS = --tool=memcheck --leak-check=full --show-leak-kinds=all --track-origins=yes --log-file=fractal_$(DATE).log
 
@@ -21,7 +21,7 @@ all: $(EXE)
 
 $(EXE): $(OBJS)
 	@$(ECHO) Linking object files to $@
-	@$(CXX) $^ -o $@ $(LDFLAGS)
+	@$(CXX) $(CXXFLAGS) $^ -o $@ $(LDFLAGS)
 	@$(ECHO) Done!
 
 $(DIRS):
