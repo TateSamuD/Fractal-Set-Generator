@@ -77,11 +77,11 @@ int julia_z4_offset(double x, double y, int max_iter, double offset_x)
    double a = x;
    double b = y;
    int i = 0;
-   double offset = -0.65 + offset_x;
-   while (i < max_iter && a * a + b * b < 4.0)
+   double offset = -0.75 + offset_x;
+   while (i < max_iter && a * a * a * a + b * b * b * b < 4.0)
    {
-      double a2 = a*a;
-      double b2 = b*b;
+      double a2 = a * a;
+      double b2 = b * b;
       double a_new = a2 * a2 - 6 * a2 * b2 + b2 * b2;
       double b_new = 4 * a2 * a * b - 4 * a * b2 * b;
       a = a_new + offset;
