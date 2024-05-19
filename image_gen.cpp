@@ -370,8 +370,8 @@ void generate_julia_z4_offset_frames()
 {
    int padding_size = (4 - (WIDTH * sizeof(RGB)) % 4) % 4;
    int data_size = (WIDTH * sizeof(RGB) + padding_size) * HEIGHT;
-   int max_iter = 5000;
-   double accuracy = 0.001;
+   int max_iter = 10000;
+   double accuracy = 0.005;
 
    uint8_t file_header[54] = {
        0x42, 0x4D,                                             // BM - Windows Bitmap

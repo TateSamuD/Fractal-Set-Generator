@@ -101,3 +101,5 @@ Versioning is marked when there is a notable change
 - Frames generated lowered
 - Added `time_taken()` function to main.cpp for debugging
 - Time logging created to keep track of how long frame generation takes.
+- Addition of `-O3` and `-openmp`compile flags has somewhat decreased generation time
+- Adjusting z4 parameters and variables for smoother frame generation

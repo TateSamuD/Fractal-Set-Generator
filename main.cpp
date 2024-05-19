@@ -12,7 +12,10 @@ void mk_dir(const char *dir)
    int ret = system(cmd.str().c_str());
    if (ret == 0)
    {
-      std::cout << "Directory " << dir << " created\n";
+      // std::cout << "Directory " << dir << " created\n";
+   }
+   else if (ret == 1)
+   {
    }
 }
 
@@ -39,7 +42,7 @@ void time_taken(struct tm *date, clock_t start_time, clock_t end_time, std::stri
    }
    else if (hours_t < 1 && minutes_t < 1)
    {
-      std::cout << "Time taken: "<< sec_t << "seconds." << std::endl;
+      std::cout << "Time taken: " << sec_t << "seconds." << std::endl;
    }
    else
    {
@@ -57,7 +60,6 @@ void time_taken(struct tm *date, clock_t start_time, clock_t end_time, std::stri
    {
       std::cout << "Unable to open time_tracking.txt" << std::endl;
    }
-
 }
 
 bool frame_warning()
@@ -69,6 +71,9 @@ bool frame_warning()
    std::cin >> choice;
    if (choice == 'y')
    {
+      std::cout << std::endl;
+      std::cout << std::endl;
+      std::cout << std::endl;
       return true;
    }
    else
@@ -132,7 +137,7 @@ void julia_choice()
          generate_julia_z2_video();
          clean_frame("./Julia_z2_Frames");
          end = clock();
-         time_taken(localtime(&date),start, end, "Julia_z2");
+         time_taken(localtime(&date), start, end, "Julia_z2");
          break;
       case 7:
          if (!frame_warning())
@@ -145,7 +150,7 @@ void julia_choice()
          generate_julia_z4_video();
          clean_frame("./Julia_z4_Frames");
          end = clock();
-         time_taken(localtime(&date),start, end, "Julia_z4");
+         time_taken(localtime(&date), start, end, "Julia_z4");
          break;
       case 0:
          std::cout << "Exiting\n";
@@ -191,7 +196,7 @@ void turbulence_choice()
          generate_turbulence_video();
          clean_frame("./Turbulence_Frames");
          end = clock();
-         time_taken(localtime(&date),start, end, "Turbulence_noise");
+         time_taken(localtime(&date), start, end, "Turbulence_noise");
          break;
       case 0:
          std::cout << "Exiting\n";
@@ -231,7 +236,7 @@ void noise_choice()
          start = clock();
          generate_fractal_noise_image();
          end = clock();
-         time_taken(localtime(&date),start, end, "Noise");
+         time_taken(localtime(&date), start, end, "Noise");
          break;
       case 0:
          std::cout << "Exiting\n";
