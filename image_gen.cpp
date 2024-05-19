@@ -401,7 +401,7 @@ void generate_julia_z4_offset_frames()
    {
       std::cout << "\033[2A"; // Move cursor up one line
       std::cout << "Overall Progress:   " << frame << "/" << NUM_FRAMES << std::endl;
-      std::cout << "\033[A"; // Move cursor up one line
+      // std::cout << "\033[A"; // Move cursor up one line
       std::cout << std::flush;
 
 #pragma omp parallel for
