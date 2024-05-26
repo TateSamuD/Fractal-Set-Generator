@@ -100,14 +100,12 @@ int julia_z8(double x, double y, int max_iter)
    int i = 0;
    while (i < max_iter && a * a + b * b < 100.0)
    {
-      double a_new = a * a * a * a * a * a * a * a -
-                     28 * a * a * a * a * a * a * b * b +
-                     70 * a * a * a * b * b * b * b -
-                     28 * a * b * b * b * b * b * b + b * b * b * b * b * b * b * b;
-      double b_new = 8 * a * a * a * a * a * a * a * b -
-                     8 * a * a * a * a * b * b * b * b -
-                     8 * a * a * b * b * b * b * b * b +
-                     8 * a * b * b * b * b * b * b * b;
+      double a2 = a * a;
+      double b2 = b * b;
+      double a4 = a2 * a2;
+      double b4 = b2 * b2;
+      double a_new = a4 * a4 - 28 * a4 * a2 * b2 + 70 * a2 * a * b4 - 28 * a * b4 * b2 + b4 * b4;
+      double b_new = 8 * a4 * a2 * a * b - 8 * a4 * b4 - 8 * a2 * b4 * b2 + 8 * a * b4 * b2 * b;
       a = a_new - 0.8;
       b = b_new + 0.5;
       i++;
