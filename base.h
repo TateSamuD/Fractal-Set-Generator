@@ -24,20 +24,20 @@
 // #include <png.h>
 
 // /* Image sizes*/
-// /* Generates 10.5mb images*/
-// #define WIDTH 1920
-// #define HEIGHT 1920
-// #define F_SIZE 10.5
+/* Generates 10.5mb images*/
+#define WIDTH 1920
+#define HEIGHT 1920
+#define F_SIZE 10.5
 
 // /* Generates 4.9mb images*/
 // #define WIDTH 1280
 // #define HEIGHT 1280
 // #define F_SIZE 4.9
 
-/* Generates 1.48mb images*/
-#define WIDTH 720
-#define HEIGHT 720
-#define F_SIZE 1.48
+// /* Generates 1.48mb images*/
+// #define WIDTH 720
+// #define HEIGHT 720
+// #define F_SIZE 1.48
 
 #define NUM_FRAMES 1480
 // #define NUM_FRAMES 720
