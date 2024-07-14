@@ -18,8 +18,8 @@ RGB get_colour(int iter, int max_iter)
 {
    if (iter == max_iter)
    {
-      // return RGB(0, 0, 0);
-      return RGB(255, 255, 255);
+      return RGB(0, 0, 0);
+      // return RGB(255, 255, 255);
    }
    else
    {
@@ -30,10 +30,10 @@ RGB get_colour(int iter, int max_iter)
       // uint8_t g = static_cast<uint8_t>(255 * cos(2 * M_PI * t));         // Green value
       // uint8_t b = static_cast<uint8_t>(255 * cos(2 * M_PI *(1 - t)));    // Blue value
 
-      // /* Generates Rainbow */
-      // uint8_t r = static_cast<uint8_t>(255 * cos(2 * M_PI * t));        // Red value
-      // uint8_t g = static_cast<uint8_t>(255 * cos(2 * M_PI * t + 2));    // Green value
-      // uint8_t b = static_cast<uint8_t>(255 * cos(2 * M_PI * t + 4));    // Blue value
+      /* Generates Rainbow */
+      uint8_t r = static_cast<uint8_t>(255 * cos(2 * M_PI * t));        // Red value
+      uint8_t g = static_cast<uint8_t>(255 * cos(2 * M_PI * t + 2));    // Green value
+      uint8_t b = static_cast<uint8_t>(255 * cos(2 * M_PI * t + 4));    // Blue value
 
       // /* Generates Blue to Red */
       // uint8_t r = static_cast<uint8_t>(255 * cos(2 * M_PI * t));        // Red value
@@ -60,10 +60,10 @@ RGB get_colour(int iter, int max_iter)
       // uint8_t g = static_cast<uint8_t>(255 * tan(2 * M_PI * t));         // Green value
       // uint8_t b = static_cast<uint8_t>(255 * tan(2 * M_PI * t + 2));    // Blue value
 
-      /* Black and Purple*/
-      uint8_t r = static_cast<uint8_t>(255 * smooth_t * tan(2 * M_PI * t + 4)); // Red value
-      uint8_t g = static_cast<uint8_t>(255 * smooth_t * cos(2 * M_PI * t));     // Green value
-      uint8_t b = static_cast<uint8_t>(255 * smooth_t * tan(2 * M_PI * t + 2)); // Blue value
+      // /* Black and Purple*/
+      // uint8_t r = static_cast<uint8_t>(255 * smooth_t * tan(2 * M_PI * t + 4)); // Red value
+      // uint8_t g = static_cast<uint8_t>(255 * smooth_t * cos(2 * M_PI * t));     // Green value
+      // uint8_t b = static_cast<uint8_t>(255 * smooth_t * tan(2 * M_PI * t + 2)); // Blue value
       return RGB(r, g, b);
    }
 }
