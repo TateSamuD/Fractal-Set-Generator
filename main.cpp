@@ -69,7 +69,8 @@ bool frame_warning()
    std::cout << "This will take a while and take up " << F_SIZE * NUM_FRAMES << "mb of space" << std::endl;
    std::cout << "Do you want to continue? [y/n]: ";
    std::cin >> choice;
-   if (choice == 'y')
+   
+   if (choice == 'y' || choice == "Y")
    {
       std::cout << std::endl;
       std::cout << std::endl;
